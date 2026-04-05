@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
+
+WORKDIR /backend
+
+COPY ./backend .
+
+RUN chmod +x projectWork
+
+ENTRYPOINT ["./projectWork"]
