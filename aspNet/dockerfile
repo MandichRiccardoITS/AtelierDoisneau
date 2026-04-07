@@ -1,9 +1,7 @@
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
 
-WORKDIR /backend
+RUN apk update && apk add git && git clone -b backendMain https://github.com/MandichRiccardoITS/AtelierDoisneau.git fullBranch
 
-COPY ./backend .
-
-RUN chmod +x projectWork
+WORKDIR /fullBranch/sorgente
 
 ENTRYPOINT ["./projectWork"]
